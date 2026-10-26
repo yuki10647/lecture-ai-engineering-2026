@@ -28,9 +28,13 @@ AIエンジニアリング実践講座（AIE2026）の演習と宿題で使う�
 ```bash
 uv run pytest -q
 uv run python -m app.ask "LoRAとは何ですか？"
+# 会話履歴を保ったまま続けて質問する
+uv run python -m app.ask --interactive "LoRAとは何ですか？"
 ```
 
 詳しい手順は [lectures/01/problem.md](lectures/01/problem.md) を見てください。
+
+`--interactive` を付けると、最初の質問への回答後も同じ会話の文脈で続けて質問できます。終了するには `/exit` を入力します。最初の質問を省略すると、既定の質問から始まります。オプションを付けない既存の実行方法は、これまでどおり1回の質問で終了します。
 
 ## 構成
 

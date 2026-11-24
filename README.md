@@ -28,6 +28,8 @@ AIエンジニアリング実践講座（AIE2026）の演習と宿題で使う�
 ```bash
 uv run pytest -q
 uv run python -m app.ask "LoRAとは何ですか？"
+# 会話履歴を保ったまま続けて質問する
+uv run python -m app.ask --interactive "LoRAとは何ですか？"
 ```
 
 詳しい手順は [lectures/01/problem.md](lectures/01/problem.md) を見てください。
@@ -53,6 +55,7 @@ uv run python -m scripts.build_rag_index
 ```
 
 同じ実験用DBを再作成する場合は、作成コマンドに `--rebuild` を付けます。同梱DBに戻すときは `unset AIE_RAG_DB` を実行します。Treeモード（`--tree`）と全文投入（`--full-context`）には検索DBは不要です。
+`--interactive` を付けると、最初の質問への回答後も同じ会話の文脈で続けて質問できます。終了するには `/exit` を入力します。最初の質問を省略すると、既定の質問から始まります。オプションを付けない既存の実行方法は、これまでどおり1回の質問で終了します。
 
 ## 構成
 

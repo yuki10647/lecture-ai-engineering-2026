@@ -14,7 +14,7 @@ from pydantic_ai.models.test import TestModel
 from app.agent import agent
 
 BASE_TOOLS = {"search_materials"}
-
+# BASE_TOOLS = {"search_glossary", "get_lecture_summary", "make_quiz"} # "make_quiz"は追加した。conflictのためコメントアウト
 
 def _parts(result, kind):
     return [p for m in result.all_messages() for p in m.parts if isinstance(p, kind)]
